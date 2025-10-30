@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffccf9, #ffe6f7);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  display: none;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(180deg, #ffccf9, #ffe6f7);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Ô nhập mật khẩu */
+.password-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  text-align: center;
+}
+
+.password-box h2 {
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+.password-box input {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #e91e63;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+}
+
+.password-box button {
+  display: block;
+  margin: 15px auto 0;
+  padding: 10px 25px;
+  border: none;
+  background: #e91e63;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.password-box button:hover {
+  background: #ff4081;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Màn hình sinh nhật */
+.container {
+  animation: fadeIn 2s ease;
+  z-index: 2;
+}
+
+.happy {
+  font-size: 2.5em;
+  color: #ff4081;
+  text-shadow: 2px 2px 10px #fff;
+}
+
+.name {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #ff1493;
+}
+
+.container button {
+  padding: 12px 25px;
+  background: #ff4081;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+}
+
+/* Ảnh trang trí */
+.decor-img {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.6);
+  animation: floatImage 2s ease-in-out infinite;
+}
+
+.img1 {
+  top: 80px;
+  left: 40px;
+}
+
+.img2 {
+  top: 40px;
+  right: 40px;
+  animation-delay: 1s;
+}
+
+.img3 {
+  bottom: 100px;
+  right: 100px;
+  animation-delay: 2s;
+}
+
+/* Màn hình lời chúc */
+.wish-box {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 25px;
+  width: 85%;
+  max-width: 400px;
+  text-align: center;
+  animation: popUp 2s ease;
+}
+
+.wish-box h1 {
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+.wish-box p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.wish-box .to {
+    font-size: 24px;
+}
+
+.signature {
+  margin-top: 15px;
+  font-style: italic;
+  color: #e91e63;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(5px); }
+}
+
+/* Hiệu ứng bong bóng và trái tim */
+#animation-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble, .heart {
+  position: absolute;
+  bottom: -10px;
+  animation: floatUp linear forwards;
+  opacity: 0.9;
+}
+
+.bubble {
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 182, 193, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px pink;
+}
+
+.heart {
+  position: absolute;
+  bottom: -10px;
+  width: 20px;
+  height: 18px;
+  background: red;
+  transform: rotate(-45deg); /* đổi hướng nghiêng cho cân hơn */
+  left: 50%;
+  margin-left: -10px;
+  transform-origin: center;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Chúc Mừng Sinh Nhật 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Màn hình nhập mật khẩu -->
+  <div id="password-screen" class="screen active">
+    <div class="password-box">
+      <h2>🎁 Mời behoa nhập mật khẩu 🎉</h2>
+      <input type="text" id="password-input" placeholder="Nhập mật khẩu..." />
+      <button id="check-password">Xác nhận</button>
+      <p id="error-message"></p>
+    </div>
+  </div>
+
+  <!-- Màn hình chúc mừng sinh nhật -->
+  <div id="birthday-screen" class="screen">
+    <audio id="music" loop>
+      <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d33db17fa8.mp3?filename=happy-birthday-to-you-1749.mp3" type="audio/mp3" />
+    </audio>
+
+    <div class="container">
+      <h1 class="happy">🎂 Happy Birthday 🎂</h1>
+      <h2 class="name">💖Chúc mừng sinh nhật behoa 💖</h2>
+      <button id="to-wish">Tiếp tục nào 🎁</button>
+    </div>
+
+    <!-- Ảnh trang trí -->
+    <img src="./img/gen-h-anh1behoa.jpg" alt="" class="decor-img img1">
+    <img src="./img/gen-n-anh2behoa.jpg" alt="" class="decor-img img2">
+    <img src="./img/gen-n-anh3behoa.jpg" alt="" class="decor-img img3">
+  </div>
+
+  <!-- Màn hình lời chúc -->
+  <div id="wish-screen" class="screen">
+    <div class="wish-box">
+      <h1 class="to">💌 Gửi đến Behoa 💌</h1>
+      <p>
+        Chúc behoa bước sang tuổi 17 thật rực rỡ, đầy niềm vui, tiếng cười và yêu thương 💕<br>
+        Bước sang tuổi mới hay ăn chóng lớn nghe lời bà và mẹ nhe 🥹🥰<br>
+        Cố gắng học tập thật tốt để vượt qua các kỳ thi căng thẳng của năm cuối nha 💖🥰<br>
+        Mong mọi điều tốt đẹp nhất sẽ đến với behoa trong năm nay 🎂🌈<br>
+        Luôn xinh đẹp, vui vẻ và tỏa sáng như ánh nắng nhé ☀️💖
+      </p>
+      <p class="signature">– hnhat nhớ behoa nhiều💞</p>
+    </div>
+  </div>
+
+  <div id="animation-layer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
